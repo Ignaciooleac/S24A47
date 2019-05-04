@@ -1,0 +1,25 @@
+<h3>RGB Color Picker</h3> 
+<div class="row justify-content-center">
+  <input id="red" data-width="150" type="text" value="0" data-max="255" class="dial">
+  <input id="green" data-width="150" type="text" value="0" data-max="255" class="dial">
+  <input id="blue" data-width="150" type="text" value="0" data-max="255" class="dial">
+</div>
+<div class="row justify-content-center">
+  <div class="card text-white" id="color-result">
+    <div class="card-body" id="card-text">
+    rgb(0, 0, 0)
+    </div>
+  </div>
+</div>
+
+<script>
+  $(function() {
+      $(".dial").knob({
+        'change': function() {
+          var rgb_result = 'rgb(' + $('#red').val() + ', ' + $('#green').val() + ', ' + $('#blue').val() + ')';
+          $('#color-result').css('background-color',rgb_result);
+          $('#card-text').text(rgb_result);
+        }
+      });
+  });
+</script>
